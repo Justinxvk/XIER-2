@@ -13,9 +13,9 @@ Isikan Alamat   : <textarea name="alamat" rows="5" cols="40"></textarea>
 </pre>
 </form>
 <?php
-$nama = $_POST['nama'];
-$telp = $_POST['telp'];
-$alamat = $_POST['alamat'];
+$nama = $_POST['nama']?? '';
+$telp = $_POST['telp']?? '';
+$alamat = $_POST['alamat']?? '';
 
 if (!empty($nama)) {
     echo "Nama : $nama <br>";
