@@ -16,8 +16,16 @@ $pekerjaan = $_POST['pekerjaan'] ?? '';
 $hobi1 = $_POST['hobi1'] ?? '';
 $hobi2 = $_POST['hobi2'] ?? '';
 $hobi3 = $_POST['hobi3'] ?? '';
-// 1. Get the 'hobi' array. If it's not set, use an empty array [].
-$hobi_array = $_POST['hobi'] ?? [];
+
+// --- A cleaner way to display hobbies ---
+// 1. Put all hobbies into an array
+$hobi_list = [$hobi1, $hobi2, $hobi3];
+
+// 2. Filter out any empty values (e.g., if the user only checked 2 hobbies)
+$hobi_list_filtered = array_filter($hobi_list);
+
+// 3. Join the remaining hobbies with a comma and space
+$hobi_string = implode(", ", $hobi_list_filtered);
 ?>
 
 <table border=1 bgcolor="Cyan">
